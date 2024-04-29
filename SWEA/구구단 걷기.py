@@ -1,5 +1,6 @@
 N = int(input())
 
+
 prev_a = 0
 prev_b = 0
 
@@ -14,4 +15,3 @@ for a in range(1, N+1):
         prev_b = b
         
         
-    
