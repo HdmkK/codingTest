@@ -2,17 +2,21 @@ from collections import defaultdict
 
 N, M = map(int, input().split())
 
-mem = defaultdict(list)
-edge = []
+edge = defaultdict(set)
+
+count = 0
 for _ in range(M):
     x, y = map(int, input().split())
-    mem[x].append(y)
-    edge.append((x, y))
     
-
-
-for x, y in edge:
+    if x in edge and y in edge:
+        ret = edge[x] & edge[y]
+        if ret > 0:
+            count += ret
+            
+    edge[x].add(y)
+    edge[y].add(x)
+   
     
-    for n in mem[x]:
-        if 
+print("#{} {}".format(test_case, count))
+#print(count)
     
